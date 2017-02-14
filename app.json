@@ -1,0 +1,6 @@
+{
+  "name": "Chromatique",
+  "description": "Node application development using webpack",
+  "repository": "https://github.com/k2works/etude_op10_no9",
+  "keywords": ["node", "express", "webpack"]
+}

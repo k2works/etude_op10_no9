@@ -1,0 +1,13 @@
+$size-l: 50px;
+$size-m: 30px;
+$color-name: blue;
+
+.main {
+  font-size: $size-l;
+}
+.Contents {
+  &__name {
+    font-size: $size-m;
+    color: $color-name;
+  }
+}
