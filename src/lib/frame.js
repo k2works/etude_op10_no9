@@ -3,10 +3,15 @@
  */
 
 class Frame {
+    constructor() {
+        this.itsScore = 0;
+    }
+
     getScore() {
-        return 0
+        return this.itsScore;
     }
     add(pins) {
+        this.itsScore += pins;
     }
 }
 
