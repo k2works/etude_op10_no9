@@ -1,6 +1,6 @@
-import './components/index.css';
-require("./components/index.scss");
+import './index.css';
 import _ from 'lodash'
+require("./index.scss");
 
 let contents = document.getElementById('contents')
 
@@ -22,7 +22,7 @@ contents.appendChild(component());
 [1,2,3].map(n => console.log(n + 1));
 
 // ES2015 Class
-import Human from './lib/human';
+import Human from '../lib/human';
 var obj = new Human('BABEL');
 var name = obj.hello();
 contents.appendChild(render(name));
@@ -39,8 +39,8 @@ function render (name) {
 }
 
 // Rnder Images
-import jpg from './components/image.jpg'
-import png from './components/image.png'
+import jpg from './images/image.jpg'
+import png from './images/image.png'
 
 var box = document.getElementById('box');
 var imgJpg = document.createElement('img');

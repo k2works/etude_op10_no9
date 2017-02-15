@@ -30,7 +30,7 @@
   "scripts": {
     "test": "mocha",
     "build": "NODE_ENV=production webpack --config webpack.prod.config.js --progress --colors",
-    "start": "node ./src/lib/app.js",
+    "start": "node ./src/app.js",
     "start:dev": "webpack-dev-server --host 0.0.0.0 --public 192.168.30.1:3000 --watch-poll --config webpack.dev.config.js",
     "flow": "flow; test $? -eq 0 -o $? -eq 2"
   },
