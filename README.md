@@ -1,6 +1,9 @@
 Étude Op. 10, No. 9 
 ===================
 
+[![CircleCI](https://circleci.com/gh/k2works/etude_op10_no9.svg?style=svg)](https://circleci.com/gh/k2works/etude_op10_no9)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/k2works/etude_op10_no6/master/LICENSE.txt)
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 # 目的 #
