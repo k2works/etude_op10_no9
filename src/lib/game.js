@@ -24,7 +24,9 @@ class Game {
             currentFrame < theFrame;
             currentFrame++)
         {
-            score += this.itsThrows[ball++] + this.itsThrows[ball++];
+            let firstThrow = this.itsThrows[ball++];
+            let secondThrow = this.itsThrows[ball++];
+            score += firstThrow + secondThrow;
         }
         return score;
     }
