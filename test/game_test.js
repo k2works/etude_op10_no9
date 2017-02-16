@@ -8,14 +8,14 @@ describe('Game', () => {
     describe('.score', () => {
         context('when one throw', function() {
             it('is scored', () => {
-                var g = new Game();
+                let g = new Game();
                 g.add(5);
                 assert(g.score() === 5);
             })
         });
         context('when tow throws', function () {
             it('is scored', () => {
-                var g = new Game();
+                let g = new Game();
                 g.add(5);
                 g.add(4);
                 assert(g.score() === 9);
@@ -23,7 +23,7 @@ describe('Game', () => {
         });
         context('when four throws', function () {
             it('is scored', () => {
-                var g = new Game();
+                let g = new Game();
                 g.add(5);
                 g.add(4);
                 g.add(7);
@@ -35,13 +35,18 @@ describe('Game', () => {
     describe('.scoreForFrame', () => {
         context('when four throws', function () {
             it('is scored by frame', () => {
-                var g = new Game();
+                let g = new Game();
                 g.add(5);
                 g.add(4);
                 g.add(7);
                 g.add(2);
                 assert(g.scoreForFrame(1) === 9);
                 assert(g.scoreForFrame(2) === 18);
+            })
+        });
+        context('when simple spare', function () {
+            it('is scored by frame', () => {
+                let g = new Game();
             })
         })
     })
