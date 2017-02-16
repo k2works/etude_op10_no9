@@ -20,6 +20,29 @@ describe('Game', () => {
                 g.add(4);
                 assert(g.score() === 9);
             })
+        });
+        context('when four throws', function () {
+            it('is scored', () => {
+                var g = new Game();
+                g.add(5);
+                g.add(4);
+                g.add(7);
+                g.add(2);
+                assert(g.score() === 18);
+            })
+        });
+    })
+    describe('.scoreForFrame', () => {
+        context('when four throws', function () {
+            it('is scored by frame', () => {
+                var g = new Game();
+                g.add(5);
+                g.add(4);
+                g.add(7);
+                g.add(2);
+                assert(g.scoreForFrame(1) === 9);
+                assert(g.scoreForFrame(2) === 18);
+            })
         })
     })
 });
