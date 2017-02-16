@@ -17,13 +17,14 @@ class Game {
         this.itsScore += pins;
     }
 
-    scoreForFrame(frame) {
+    scoreForFrame(theFrame) {
+        let ball = 0;
         let score = 0;
-        for(let ball = 0;
-            frame > 0 && (ball < this.itsCurrentThrow);
-            ball+=2, frame--)
+        for(let currentFrame = 0;
+            currentFrame < theFrame;
+            currentFrame++)
         {
-            score += this.itsThrows[ball] + this.itsThrows[ball+1];
+            score += this.itsThrows[ball++] + this.itsThrows[ball++];
         }
         return score;
     }
