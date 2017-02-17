@@ -149,7 +149,7 @@ describe('Game', () => {
                 {
                     g.add(10);
                 }
-                assert(g.getCurrentFrame() === 10);
+                assert(g.getCurrentFrame() === 11);
             })
         });
     });
