@@ -17,13 +17,15 @@ class Game {
     add(pins) {
         this.itsThrows[this.itsCurrentThrow++]=pins;
         this.itsScore += pins;
-        if (this.firstThrow === true)
-        {
+        this.adjustCurrentFrame();
+    }
+
+    adjustCurrentFrame() {
+        if (this.firstThrow === true) {
             this.firstThrow = false;
             this.itsCurrentFrame++;
         }
-        else
-        {
+        else {
             this.firstThrow = true;
         }
     }
