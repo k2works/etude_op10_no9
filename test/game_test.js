@@ -73,7 +73,7 @@ describe('Game', () => {
             })
         });
         context('when playing one game', function () {
-            it('is socred', () => {
+            it('is scored', () => {
                 g.add(1);
                 g.add(4);
                 g.add(4);
@@ -95,7 +95,15 @@ describe('Game', () => {
                 g.add(6);
                 assert(g.score() === 133);
             })
-        })
+        });
+        context('when heart break game', function () {
+            it('is scored', () => {
+                for(let i=0; i<11; i++)
+                    g.add(10);
+                g.add(9);
+                assert(g.score() === 299);
+            })
+        });
     });
 
     describe('.scoreForFrame', () => {
