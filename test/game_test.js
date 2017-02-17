@@ -59,6 +59,19 @@ describe('Game', () => {
                 assert(g.score() === 300);
             })
         });
+        context('when 10th frame', function () {
+            it('is scored', () => {
+                for(let i=0; i<9; i++)
+                {
+                    g.add(0);
+                    g.add(0);
+                }
+                g.add(2);
+                g.add(8); // 10番目のフレームのスペア
+                g.add(10); // 配列の最後にストライク
+                assert(g.score() === 20);
+            })
+        });
     });
 
     describe('.scoreForFrame', () => {
