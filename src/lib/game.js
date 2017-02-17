@@ -41,7 +41,7 @@ class Game {
     }
 
     getCurrentFrame() {
-        return 1;
+        return 1 + Math.floor((this.itsCurrentThrow-1)/2);
     }
 }
 
