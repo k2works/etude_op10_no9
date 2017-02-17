@@ -85,5 +85,12 @@ describe('Game', () => {
                 assert(g.getCurrentFrame() === 1);
             })
         })
+        context('when two throw', function () {
+            it('current frame is', () =>{
+                g.add(5);
+                g.add(4);
+                assert(g.getCurrentFrame() === 1);
+            })
+        })
     });
 });
