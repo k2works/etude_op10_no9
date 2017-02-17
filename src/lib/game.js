@@ -31,7 +31,7 @@ class Game {
             this.itsCurrentFrame++;
             this.firstThrow = true;
         }
-        this.itsCurrentFrame = Math.min(10, this.itsCurrentFrame);
+        this.itsCurrentFrame = Math.min(11, this.itsCurrentFrame);
     }
 
     scoreForFrame(theFrame) {
