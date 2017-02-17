@@ -11,12 +11,6 @@ describe('Game', () => {
     });
 
     describe('.score', () => {
-        context('when one throw', function() {
-            it('is scored', () => {
-                g.add(5);
-                assert(g.score() === 5);
-            })
-        });
         context('when tow throws', function () {
             it('is scored', () => {
                 g.add(5);
