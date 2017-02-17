@@ -50,6 +50,15 @@ describe('Game', () => {
                 assert(g.score() === 28);
             })
         });
+        context('when perfect game', function () {
+            it('is scored', () => {
+                for(let i=0; i<12; i++)
+                {
+                    g.add(10);
+                }
+                assert(g.score() === 300);
+            })
+        });
     });
 
     describe('.scoreForFrame', () => {
@@ -132,6 +141,15 @@ describe('Game', () => {
                 g.add(3);
                 g.add(6);
                 assert(g.getCurrentFrame() === 3);
+            })
+        });
+        context('when perfect game', function () {
+            it('current frame is', () => {
+                for(let i=0; i<12; i++)
+                {
+                    g.add(10);
+                }
+                assert(g.getCurrentFrame() === 10);
             })
         });
     });
