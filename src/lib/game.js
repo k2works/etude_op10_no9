@@ -6,7 +6,7 @@ class Game {
         this.itsScore = 0;
         this.itsThrows = new Array(21);
         this.itsCurrentThrow = 0;
-        this.itsCurrentFrame = 0;
+        this.itsCurrentFrame = 1;
         this.firstThrow = true;
     }
 
@@ -23,9 +23,9 @@ class Game {
     adjustCurrentFrame() {
         if (this.firstThrow === true) {
             this.firstThrow = false;
-            this.itsCurrentFrame++;
         }
         else {
+            this.itsCurrentFrame++;
             this.firstThrow = true;
         }
     }
