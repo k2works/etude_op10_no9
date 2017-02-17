@@ -75,7 +75,7 @@ describe('Game', () => {
                 g.add(4);
                 assert(g.score() === 9);
             })
-        })
+        });
     });
 
     describe('.getCurrentFrame', () => {
@@ -100,6 +100,6 @@ describe('Game', () => {
                 g.add(2);
                 assert(g.getCurrentFrame() === 2);
             })
-        })
+        });
     });
 });
