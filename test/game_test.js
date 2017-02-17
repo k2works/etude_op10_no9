@@ -72,6 +72,30 @@ describe('Game', () => {
                 assert(g.score() === 20);
             })
         });
+        context('when playing one game', function () {
+            it('is socred', () => {
+                g.add(1);
+                g.add(4);
+                g.add(4);
+                g.add(5);
+                g.add(6);
+                g.add(4);
+                g.add(5);
+                g.add(5);
+                g.add(10);
+                g.add(0);
+                g.add(1);
+                g.add(7);
+                g.add(3);
+                g.add(6);
+                g.add(4);
+                g.add(10);
+                g.add(2);
+                g.add(8);
+                g.add(6);
+                assert(g.score() === 133);
+            })
+        })
     });
 
     describe('.scoreForFrame', () => {
