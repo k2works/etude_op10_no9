@@ -42,6 +42,14 @@ describe('Game', () => {
                 assert(g.score() === 18);
             })
         });
+        context('when strike', function () {
+            it('is scored', () => {
+                g.add(10);
+                g.add(3);
+                g.add(6);
+                assert(g.score() === 28);
+            })
+        });
     });
 
     describe('.scoreForFrame', () => {
@@ -68,6 +76,14 @@ describe('Game', () => {
                 g.add(3);
                 g.add(2);
                 assert(g.scoreForFrame(2) === 18);
+            });
+        });
+        context('when strike', function () {
+            it('is scored by frame', () => {
+                g.add(10);
+                g.add(3);
+                g.add(6);
+                assert(g.scoreForFrame(1) === 19);
             })
         });
     });
@@ -96,17 +112,25 @@ describe('Game', () => {
             })
         });
         context('when spare', function () {
-            it('is scored by frame', () => {
+            it('current frame is', () => {
                 g.add(3);
                 g.add(7);
                 g.add(3);
                 assert(g.getCurrentFrame() === 2);
             });
-            it('is scored by frame', () => {
+            it('current frame is', () => {
                 g.add(3);
                 g.add(7);
                 g.add(3);
                 g.add(2);
+                assert(g.getCurrentFrame() === 3);
+            })
+        });
+        context('when strike', function () {
+            it('current frame is', () => {
+                g.add(10);
+                g.add(3);
+                g.add(6);
                 assert(g.getCurrentFrame() === 3);
             })
         });
