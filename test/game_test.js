@@ -33,11 +33,18 @@ describe('Game', () => {
                 assert(g.score() === 18);
             })
         });
-        context('when simple spare', function () {
-            it('is scored by frame', () => {
+        context('when spare', function () {
+            it('is scored', () => {
                 g.add(3);
                 g.add(7);
                 g.add(3);
+                assert(g.score() === 13);
+            });
+            it('is scored', () => {
+                g.add(3);
+                g.add(7);
+                g.add(3);
+                g.add(2);
                 assert(g.score() === 18);
             })
         });
@@ -67,13 +74,6 @@ describe('Game', () => {
                 g.add(3);
                 g.add(2);
                 assert(g.scoreForFrame(2) === 18);
-            })
-        });
-        context('when tow throws', function () {
-            it('is scored', () => {
-                g.add(5);
-                g.add(4);
-                assert(g.score() === 9);
             })
         });
     });

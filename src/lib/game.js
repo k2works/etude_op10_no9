@@ -4,14 +4,14 @@
 class Game {
     constructor() {
         this.itsScore = 0;
-        this.itsThrows = new Array(21);
+        this.itsThrows = Array.apply(null,Array(21)).map(function() { return 0 });
         this.itsCurrentThrow = 0;
         this.itsCurrentFrame = 1;
         this.firstThrow = true;
     }
 
     score() {
-        return this.itsScore;
+        return this.scoreForFrame(this.getCurrentFrame()-1);
     }
 
     add(pins) {
