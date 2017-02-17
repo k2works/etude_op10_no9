@@ -61,6 +61,13 @@ describe('Game', () => {
                 g.add(3);
                 assert(g.scoreForFrame(1) === 13);
             })
+            it('is scored by frame', () => {
+                g.add(3);
+                g.add(7);
+                g.add(3);
+                g.add(2);
+                assert(g.scoreForFrame(2) === 18);
+            })
         });
         context('when tow throws', function () {
             it('is scored', () => {
