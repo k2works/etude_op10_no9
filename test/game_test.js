@@ -71,10 +71,18 @@ describe('Game', () => {
         });
         context('when tow throws', function () {
             it('is scored', () => {
-                var g = new Game();
                 g.add(5);
                 g.add(4);
                 assert(g.score() === 9);
+            })
+        })
+    });
+
+    describe('.getCurrentFrame', () => {
+        context('when one throw', function () {
+            it('current frame is', () =>{
+                g.add(5);
+                assert(g.getCurrentFrame() === 1);
             })
         })
     });
