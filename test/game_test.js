@@ -54,7 +54,7 @@ describe('Game', () => {
                 assert(g.scoreForFrame(2) === 18);
             })
         });
-        context('when simple spare', function () {
+        context('when spare', function () {
             it('is scored by frame', () => {
                 g.add(3);
                 g.add(7);
@@ -97,6 +97,21 @@ describe('Game', () => {
                 g.add(5);
                 g.add(4);
                 g.add(7);
+                g.add(2);
+                assert(g.getCurrentFrame() === 3);
+            })
+        });
+        context('when spare', function () {
+            it('is scored by frame', () => {
+                g.add(3);
+                g.add(7);
+                g.add(3);
+                assert(g.getCurrentFrame() === 2);
+            });
+            it('is scored by frame', () => {
+                g.add(3);
+                g.add(7);
+                g.add(3);
                 g.add(2);
                 assert(g.getCurrentFrame() === 3);
             })
