@@ -30,7 +30,7 @@ class Game {
             // スペアの得点計算には次のフレームの第１投が必要
             if ( frameScore === 10 )
             {
-                score += frameScore + this.itsThrows[ball++];
+                score += frameScore + this.itsThrows[ball];
             }
             else
             {
