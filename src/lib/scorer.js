@@ -37,10 +37,6 @@ class Scorer {
         return score;
     }
 
-    getCurrentFrame() {
-        return this.itsCurrentFrame;
-    }
-
     _strike() {
         return this.itsThrows[this.ball] === 10;
     }
