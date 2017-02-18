@@ -28,16 +28,25 @@ class Game {
     }
 
     _adjustCurrentFrame(pins) {
-        if (this.firstThrow === true) {
-            if ( pins === 10 ) // ストライク
-                this._advanceFrame();
-            else
+        if (this.firstThrow === true)
+        {
+            if(this._adjustFrameForStrike(pins) === false)
                 this.firstThrow = false;
         }
-        else {
+        else
+        {
             this.firstThrow = true;
             this._advanceFrame();
         }
+    }
+
+    _adjustFrameForStrike(pins) {
+        if (pins === 10)
+        {
+            this._advanceFrame();
+            return true;
+        }
+        return false;
     }
 
     _advanceFrame() {
