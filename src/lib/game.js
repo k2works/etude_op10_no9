@@ -72,15 +72,24 @@ class Game {
         this.secondThrow = this.itsThrows[this.ball + 1];
         let frameScore = this.firstThrow + this.secondThrow;
         // スペアの得点計算には次のフレームの第１投が必要
-        if (frameScore === 10) {
+        if (this._spare()) {
             this.ball += 2;
-            score += frameScore + this.itsThrows[this.ball];
+            score += 10 + this._nextBall();
         }
-        else {
+        else
+        {
             this.ball += 2;
             score += frameScore;
         }
         return score;
+    }
+
+    _spare() {
+        return (this.itsThrows[this.ball] + this.itsThrows[this.ball+1] === 10);
+    }
+
+    _nextBall() {
+        return this.itsThrows[this.ball];
     }
 }
 
