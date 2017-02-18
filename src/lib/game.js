@@ -24,7 +24,7 @@ class Game {
     }
 
     _adjustCurrentFrame(pins) {
-        if ((this.firstThrowInFrame && pins === 10 || (!this.firstThrowInFrame)))
+        if (this._strike(pins) || !this.firstThrowInFrame)
         {
             this._advanceFrame();
             this.firstThrowInFrame = true;
@@ -33,6 +33,10 @@ class Game {
         {
             this.firstThrowInFrame = false;
         }
+    }
+
+    _strike(pins) {
+        return this.firstThrowInFrame && pins === 10;
     }
 
     _advanceFrame() {
