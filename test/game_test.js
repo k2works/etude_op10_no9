@@ -40,6 +40,14 @@ describe('Game', () => {
                 g.add(3);
                 g.add(2);
                 assert(g.score() === 18);
+            });
+            it('is scored', () => {
+                for(let i=0; i<9; i++)
+                    g.add(10);
+                g.add(9);
+                g.add(1);
+                g.add(1);
+                assert(g.score() === 270);
             })
         });
         context('when strike', function () {
