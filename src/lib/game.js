@@ -35,25 +35,25 @@ class Game {
     }
 
     scoreForFrame(theFrame) {
-        let ball = 0;
+        this.ball = 0;
         let score = 0;
         for(let currentFrame = 0;
             currentFrame < theFrame;
             currentFrame++)
         {
-            let firstThrow = this.itsThrows[ball++];
-            if (firstThrow === 10)
+            this.firstThrow = this.itsThrows[this.ball++];
+            if (this.firstThrow === 10)
             {
-                score += 10 + this.itsThrows[ball] + this.itsThrows[ball+1];
+                score += 10 + this.itsThrows[this.ball] + this.itsThrows[this.ball+1];
             }
             else
             {
-                let secondThrow = this.itsThrows[ball++];
-                let frameScore = firstThrow + secondThrow;
+                this.secondThrow = this.itsThrows[this.ball++];
+                let frameScore = this.firstThrow + this.secondThrow;
                 // スペアの得点計算には次のフレームの第１投が必要
                 if ( frameScore === 10 )
                 {
-                    score += frameScore + this.itsThrows[ball];
+                    score += frameScore + this.itsThrows[this.ball];
                 }
                 else
                 {
