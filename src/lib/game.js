@@ -20,25 +20,30 @@ class Game {
 
     add(pins) {
         this.scorer.addThrow(pins);
-        this.adjustCurrentFrame(pins);
-    }
-
-    adjustCurrentFrame(pins) {
-        if (this.firstThrow === true) {
-            if ( pins === 10 ) // ストライク
-                this.itsCurrentFrame++;
-            else
-                this.firstThrow = false;
-        }
-        else {
-            this.itsCurrentFrame++;
-            this.firstThrow = true;
-        }
-        this.itsCurrentFrame = Math.min(11, this.itsCurrentFrame);
+        this._adjustCurrentFrame(pins);
     }
 
     scoreForFrame(theFrame) {
         return this.scorer.scoreForFrame(theFrame);
+    }
+
+    _adjustCurrentFrame(pins) {
+        if (this.firstThrow === true) {
+            if ( pins === 10 ) // ストライク
+                this._advanceFrame();
+            else
+                this.firstThrow = false;
+        }
+        else {
+            this.firstThrow = true;
+            this._advanceFrame();
+        }
+    }
+
+    _advanceFrame() {
+        this.itsCurrentFrame++;
+        if(this.itsCurrentFrame > 11)
+            this.itsCurrentFrame = 11;
     }
 }
 
