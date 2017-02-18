@@ -5,17 +5,13 @@ import Scorer from './scorer';
 
 class Game {
     constructor() {
-        this.itsCurrentFrame = 1;
+        this.itsCurrentFrame = 0;
         this.firstThrow = true;
         this.scorer = new Scorer();
     }
 
     score() {
-        return this.scoreForFrame(this.getCurrentFrame()-1);
-    }
-
-    getCurrentFrame() {
-        return this.itsCurrentFrame;
+        return this.scoreForFrame(this.itsCurrentFrame);
     }
 
     add(pins) {
@@ -50,9 +46,7 @@ class Game {
     }
 
     _advanceFrame() {
-        this.itsCurrentFrame++;
-        if(this.itsCurrentFrame > 11)
-            this.itsCurrentFrame = 11;
+        this.itsCurrentFrame = Math.min(10, this.itsCurrentFrame + 1);
     }
 }
 
