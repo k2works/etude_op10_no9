@@ -6,7 +6,7 @@ import Scorer from './scorer';
 class Game {
     constructor() {
         this.itsCurrentFrame = 0;
-        this.firstThrow = true;
+        this.firstThrowInFrame = true;
         this.scorer = new Scorer();
     }
 
@@ -24,25 +24,15 @@ class Game {
     }
 
     _adjustCurrentFrame(pins) {
-        if (this.firstThrow === true)
+        if ((this.firstThrowInFrame && pins === 10 || (!this.firstThrowInFrame)))
         {
-            if(this._adjustFrameForStrike(pins) === false)
-                this.firstThrow = false;
+            this._advanceFrame();
+            this.firstThrowInFrame = true;
         }
         else
         {
-            this.firstThrow = true;
-            this._advanceFrame();
+            this.firstThrowInFrame = false;
         }
-    }
-
-    _adjustFrameForStrike(pins) {
-        if (pins === 10)
-        {
-            this._advanceFrame();
-            return true;
-        }
-        return false;
     }
 
     _advanceFrame() {
