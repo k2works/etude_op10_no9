@@ -41,35 +41,38 @@ class Game {
             currentFrame < theFrame;
             currentFrame++)
         {
-            this.firstThrow = this.itsThrows[this.ball++];
+            this.firstThrow = this.itsThrows[this.ball];
             if (this.firstThrow === 10)
             {
+                this.ball++;
                 score += 10 + this.itsThrows[this.ball] + this.itsThrows[this.ball+1];
             }
             else
             {
-                score += this.handleSecondThrow();
+                score += this._handleSecondThrow();
             }
-        }
-        return score;
-    }
-
-    handleSecondThrow() {
-        let score = 0;
-        this.secondThrow = this.itsThrows[this.ball++];
-        let frameScore = this.firstThrow + this.secondThrow;
-        // スペアの得点計算には次のフレームの第１投が必要
-        if (frameScore === 10) {
-            score += frameScore + this.itsThrows[this.ball];
-        }
-        else {
-            score += frameScore;
         }
         return score;
     }
 
     getCurrentFrame() {
         return this.itsCurrentFrame;
+    }
+
+    _handleSecondThrow() {
+        let score = 0;
+        this.secondThrow = this.itsThrows[this.ball + 1];
+        let frameScore = this.firstThrow + this.secondThrow;
+        // スペアの得点計算には次のフレームの第１投が必要
+        if (frameScore === 10) {
+            this.ball += 2;
+            score += frameScore + this.itsThrows[this.ball];
+        }
+        else {
+            this.ball += 2;
+            score += frameScore;
+        }
+        return score;
     }
 }
 
