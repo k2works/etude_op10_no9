@@ -5,6 +5,35 @@ import assert from 'power-assert';
 import Game from '../src/lib/game';
 
 describe('Game', () => {
+    let _twoThrows = function (g) {
+        g.add(5);
+        g.add(4);
+    };
+
+    let _fourThrows = function (g) {
+        g.add(5);
+        g.add(4);
+        g.add(7);
+        g.add(2);
+    };
+    let _threeThrowsSpare = function (g) {
+        g.add(3);
+        g.add(7);
+        g.add(3);
+    };
+
+    let _fourThrowsSpare = function (g) {
+        g.add(3);
+        g.add(7);
+        g.add(3);
+        g.add(2);
+    };
+    let _threeThrowsStrike = function (g) {
+        g.add(10);
+        g.add(3);
+        g.add(6);
+    };
+
     let g;
     beforeEach(function(){
         g = new Game();
@@ -13,32 +42,23 @@ describe('Game', () => {
     describe('.score', () => {
         context('when tow throws', function () {
             it('is scored', () => {
-                g.add(5);
-                g.add(4);
+                _twoThrows(g);
                 assert(g.score() === 9);
             })
         });
         context('when four throws', function () {
             it('is scored', () => {
-                g.add(5);
-                g.add(4);
-                g.add(7);
-                g.add(2);
+                _fourThrows(g);
                 assert(g.score() === 18);
             })
         });
         context('when spare', function () {
             it('is scored', () => {
-                g.add(3);
-                g.add(7);
-                g.add(3);
+                _threeThrowsSpare(g);
                 assert(g.score() === 13);
             });
             it('is scored', () => {
-                g.add(3);
-                g.add(7);
-                g.add(3);
-                g.add(2);
+                _fourThrowsSpare(g);
                 assert(g.score() === 18);
             });
             it('is scored', () => {
@@ -52,9 +72,7 @@ describe('Game', () => {
         });
         context('when strike', function () {
             it('is scored', () => {
-                g.add(10);
-                g.add(3);
-                g.add(6);
+                _threeThrowsStrike(g);
                 assert(g.score() === 28);
             })
         });
@@ -117,34 +135,24 @@ describe('Game', () => {
     describe('.scoreForFrame', () => {
         context('when four throws', function () {
             it('is scored by frame', () => {
-                g.add(5);
-                g.add(4);
-                g.add(7);
-                g.add(2);
+                _fourThrows(g);
                 assert(g.scoreForFrame(1) === 9);
                 assert(g.scoreForFrame(2) === 18);
             })
         });
         context('when spare', function () {
             it('is scored by frame', () => {
-                g.add(3);
-                g.add(7);
-                g.add(3);
+                _threeThrowsSpare(g);
                 assert(g.scoreForFrame(1) === 13);
             });
             it('is scored by frame', () => {
-                g.add(3);
-                g.add(7);
-                g.add(3);
-                g.add(2);
+                _fourThrowsSpare(g);
                 assert(g.scoreForFrame(2) === 18);
             });
         });
         context('when strike', function () {
             it('is scored by frame', () => {
-                g.add(10);
-                g.add(3);
-                g.add(6);
+                _threeThrowsStrike(g);
                 assert(g.scoreForFrame(1) === 19);
             })
         });
