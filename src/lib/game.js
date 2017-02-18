@@ -5,7 +5,6 @@ import Scorer from './scorer';
 
 class Game {
     constructor() {
-        this.itsScore = 0;
         this.itsCurrentFrame = 1;
         this.firstThrow = true;
         this.scorer = new Scorer();
@@ -21,7 +20,6 @@ class Game {
 
     add(pins) {
         this.scorer.addThrow(pins);
-        this.itsScore += pins;
         this.adjustCurrentFrame(pins);
     }
 
