@@ -6,9 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "0.3.0"
 
   config.vm.network :forwarded_port, guest:8080, host:8080, id:"jenkins"
-  config.vm.network :forwarded_port, guest:80, host:8888, id:"nginx"
-  config.vm.network :forwarded_port, guest:3000, host:3000, id:"node1"
-  config.vm.network :forwarded_port, guest:3001, host:3001, id:"node2"
+  config.vm.network :forwarded_port, guest:3000, host:3000, id:"node"
   config.vm.network :private_network, ip:"192.168.30.1"
 
   config.vm.provider :virtualbox do |vb|
