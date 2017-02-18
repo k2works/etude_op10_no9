@@ -42,10 +42,10 @@ class Game {
             currentFrame++)
         {
             this.firstThrow = this.itsThrows[this.ball];
-            if (this.firstThrow === 10)
+            if (this._strike())
             {
                 this.ball++;
-                score += 10 + this.itsThrows[this.ball] + this.itsThrows[this.ball+1];
+                score += 10 + this._nextTwoBalls();
             }
             else
             {
@@ -57,6 +57,14 @@ class Game {
 
     getCurrentFrame() {
         return this.itsCurrentFrame;
+    }
+
+    _strike() {
+        return this.itsThrows[this.ball] === 10;
+    }
+
+    _nextTwoBalls() {
+        return this.itsThrows[this.ball] + this.itsThrows[this.ball + 1];
     }
 
     _handleSecondThrow() {
