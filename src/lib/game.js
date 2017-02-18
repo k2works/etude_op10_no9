@@ -48,18 +48,22 @@ class Game {
             }
             else
             {
-                this.secondThrow = this.itsThrows[this.ball++];
-                let frameScore = this.firstThrow + this.secondThrow;
-                // スペアの得点計算には次のフレームの第１投が必要
-                if ( frameScore === 10 )
-                {
-                    score += frameScore + this.itsThrows[this.ball];
-                }
-                else
-                {
-                    score += frameScore;
-                }
+                score += this.handleSecondThrow();
             }
+        }
+        return score;
+    }
+
+    handleSecondThrow() {
+        let score = 0;
+        this.secondThrow = this.itsThrows[this.ball++];
+        let frameScore = this.firstThrow + this.secondThrow;
+        // スペアの得点計算には次のフレームの第１投が必要
+        if (frameScore === 10) {
+            score += frameScore + this.itsThrows[this.ball];
+        }
+        else {
+            score += frameScore;
         }
         return score;
     }
