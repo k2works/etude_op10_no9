@@ -1,8 +1,6 @@
 Étude Op. 10, No. 9 
 ===================
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
 # 目的 #
 ボウリングゲームnode.js実装
 
@@ -22,6 +20,15 @@
 1. [開発](#開発)
 
 ## 構築
+```bash
+vagrant up
+vagrant ssh
+cd /vagrant
+npm init -y
+npm install babel-core babel-preset-es2015 babel-plugin-transform-flow-strip-types --save-dev
+npm install mocha --save-dev
+npm install power-assert babel-plugin-espower --save-dev
+```
 **[⬆ back to top](#構成)**
 
 ## 配置

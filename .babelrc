@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "es2015"
+  ],
+  "sourceMaps": true,
+  "retainLines": true,
+  "plugins": [
+    "babel-plugin-espower",
+    "transform-flow-strip-types"
+  ]
+}
