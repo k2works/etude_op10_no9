@@ -46,9 +46,15 @@ class Game {
                 this.ball++;
                 score += 10 + this._nextTwoBalls();
             }
+            else if (this._spare())
+            {
+                this.ball += 2;
+                score += 10 + this._nextBall();
+            }
             else
             {
-                score += this._handleSecondThrow();
+                score += this._twoBallsInFrame();
+                this.ball += 2;
             }
         }
         return score;
@@ -64,21 +70,6 @@ class Game {
 
     _nextTwoBalls() {
         return this.itsThrows[this.ball] + this.itsThrows[this.ball + 1];
-    }
-
-    _handleSecondThrow() {
-        let score = 0;
-        // スペアの得点計算には次のフレームの第１投が必要
-        if (this._spare()) {
-            this.ball += 2;
-            score += 10 + this._nextBall();
-        }
-        else
-        {
-            score += this._twoBallsInFrame();
-            this.ball += 2;
-        }
-        return score;
     }
 
     _spare() {
