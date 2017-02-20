@@ -1,6 +1,6 @@
 {
   "name": "etude-op10-no9",
-  "version": "0.0.3",
+  "version": "0.2.0",
   "description": "Bowling game Node impliments.",
   "main": "index.js",
   "scripts": {
