@@ -63,7 +63,7 @@ describe('Game', () => {
             it('current frame is', () => {
                 g.add(5);
                 g.add(4);
-                assert(g.getCurrentFrame() === 1);
+                assert(g.getCurrentFrame() === 2);
             })
         });
         context('when four throws', function () {
@@ -72,7 +72,7 @@ describe('Game', () => {
                 g.add(4);
                 g.add(7);
                 g.add(2);
-                assert(g.getCurrentFrame() === 2);
+                assert(g.getCurrentFrame() === 3);
             })
         })
     });

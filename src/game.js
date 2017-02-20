@@ -4,7 +4,7 @@ class Game {
         this.itsThrows = Array.apply(null,Array(21)).map(function() { return 0 });
         this.itsCurrentThrow = 0;
         this.firstThrow = true;
-        this.itsCurrentFrame = 0;
+        this.itsCurrentFrame = 1;
     }
 
     score() {
@@ -43,8 +43,8 @@ class Game {
     _adjustCurrentFrame() {
         if (this.firstThrow === true) {
             this.firstThrow = false;
-            this.itsCurrentFrame++;
         } else {
+            this.itsCurrentFrame++;
             this.firstThrow = true;
         }
     }
