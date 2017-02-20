@@ -65,6 +65,15 @@ describe('Game', () => {
                 g.add(4);
                 assert(g.getCurrentFrame() === 1);
             })
+        });
+        context('when four throws', function () {
+            it('current frame is', () => {
+                g.add(5);
+                g.add(4);
+                g.add(7);
+                g.add(2);
+                assert(g.getCurrentFrame() === 2);
+            })
         })
     });
 });
