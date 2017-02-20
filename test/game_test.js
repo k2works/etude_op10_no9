@@ -10,5 +10,13 @@ describe('Game', () => {
                 assert(g.score() === 5);
             })
         });
+        context('when two throws', function () {
+            it('is scored', () => {
+                var g = new Game();
+                g.add(5);
+                g.add(4);
+                assert(g.score() === 9);
+            })
+        });
     })
-})
+});
