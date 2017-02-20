@@ -22,12 +22,7 @@ describe('Game', () => {
             })
         });
         context('when spare', function () {
-            it('is scored', () => {
-                g.add(3);
-                g.add(7);
-                g.add(3);
-                assert(g.score() === 18);
-            })
+            it('is scored')
         })
     });
     describe('.scoreForFrame', () => {
@@ -47,6 +42,13 @@ describe('Game', () => {
                 g.add(7);
                 g.add(3);
                 assert(g.scoreForFrame(1) === 13);
+            });
+            it('is scored by frame', () => {
+                g.add(3);
+                g.add(7);
+                g.add(3);
+                g.add(2);
+                assert(g.scoreForFrame(2) === 18);
             })
         })
     });
