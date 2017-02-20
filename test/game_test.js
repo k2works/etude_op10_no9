@@ -21,6 +21,14 @@ describe('Game', () => {
                 assert(g.score() === 9);
             })
         });
+        context('when spare', function () {
+            it('is scored', () => {
+                g.add(3);
+                g.add(7);
+                g.add(3);
+                assert(g.score() === 18);
+            })
+        })
     });
     describe('.scoreForFrame', () => {
         context('when four throws', function () {
