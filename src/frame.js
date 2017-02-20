@@ -2,7 +2,7 @@ class Frame {
     getScore() {
         return 0
     }
-    add(itsThrow) {
+    add(pins) {
     }
 }
 export default Frame;
