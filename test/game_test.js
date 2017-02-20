@@ -19,4 +19,17 @@ describe('Game', () => {
             })
         });
     })
+    describe('.scoreForFrame', () => {
+        context('when four throws', function () {
+            it('is scored by frame', () => {
+                var g = new Game();
+                g.add(5);
+                g.add(4);
+                g.add(7);
+                g.add(2);
+                assert(g.scoreForFrame(1) === 9);
+                assert(g.scoreForFrame(2) === 18);
+            })
+        });
+    })
 });
