@@ -8,6 +8,13 @@ describe('Frame', () => {
                 var f = new Frame();
                 assert(f.getScore() === 0);
             })
-        })
+        });
+        context('when one throw', function () {
+            it('is scored', () => {
+                var f = new Frame();
+                f.add(5);
+                assert(f.getScore() === 5);
+            })
+        });
     })
 })
