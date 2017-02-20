@@ -18,7 +18,7 @@ describe('Game', () => {
                 assert(g.score() === 9);
             })
         });
-    })
+    });
     describe('.scoreForFrame', () => {
         context('when four throws', function () {
             it('is scored by frame', () => {
@@ -31,5 +31,5 @@ describe('Game', () => {
                 assert(g.scoreForFrame(2) === 18);
             })
         });
-    })
+    });
 });
