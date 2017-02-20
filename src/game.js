@@ -20,7 +20,9 @@ class Game {
         for (let currentFrame=0;
              currentFrame < theFrame;
              currentFrame++) {
-            score += this.itsThrows[ball] + this.itsThrows[ball+1];
+            let firstThrow = this.itsThrows[ball++];
+            let secondThrow = this.itsThrows[ball++];
+            score += firstThrow + secondThrow;
         }
         return score;
     }
