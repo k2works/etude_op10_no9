@@ -1,7 +1,13 @@
 import assert from 'power-assert';
+import Frame from '../src/frame';
 
 describe('Frame', () => {
-    it('does something useful', () => {
-        assert(true === true);
+    describe('.getScore', () => {
+        context('when no throw', function () {
+            it('is scored', () => {
+                var f = new Frame();
+                assert(f.getScore() === 0);
+            })
+        })
     })
 })
