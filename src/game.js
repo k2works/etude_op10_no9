@@ -1,9 +1,14 @@
 class Game {
+    constructor() {
+        this.itsScore = 0;
+    }
+
     score() {
-        return 0;
+        return this.itsScore;
     }
 
     add(pins) {
+        this.itsScore += pins;
     }
 }
 export default Game;
