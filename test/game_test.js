@@ -58,6 +58,13 @@ describe('Game', () => {
                 g.add(5);
                 assert(g.getCurrentFrame() === 1);
             })
+        });
+        context('when two throws', function () {
+            it('current frame is', () => {
+                g.add(5);
+                g.add(4);
+                assert(g.getCurrentFrame() === 1);
+            })
         })
     });
 });
