@@ -14,12 +14,7 @@ class Game {
     add(pins) {
         this.itsThrows[this.itsCurrentThrow++]=pins;
         this.itsScore += pins;
-        if (this.firstThrow === true) {
-            this.firstThrow = false;
-            this.itsCurrentFrame++;
-        } else {
-            this.firstThrow = true;
-        }
+        this._adjustCurrentFrame();
     }
 
     scoreForFrame(theFrame) {
@@ -43,6 +38,15 @@ class Game {
 
     getCurrentFrame() {
         return this.itsCurrentFrame;
+    }
+
+    _adjustCurrentFrame() {
+        if (this.firstThrow === true) {
+            this.firstThrow = false;
+            this.itsCurrentFrame++;
+        } else {
+            this.firstThrow = true;
+        }
     }
 }
 export default Game;
