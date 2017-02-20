@@ -31,5 +31,10 @@ describe('Game', () => {
                 assert(g.scoreForFrame(2) === 18);
             })
         });
+        context('when spare', function () {
+            it('is scored by frame', () => {
+                var g = new Game();
+            })
+        })
     });
 });
