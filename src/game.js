@@ -32,5 +32,9 @@ class Game {
         }
         return score;
     }
+
+    getCurrentFrame() {
+        return 1;
+    }
 }
 export default Game;

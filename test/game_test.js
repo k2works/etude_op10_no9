@@ -52,4 +52,12 @@ describe('Game', () => {
             })
         })
     });
+    describe('.getCurrentFrame', () => {
+        context('when one throw', function () {
+            it('current frame is', () => {
+                g.add(5);
+                assert(g.getCurrentFrame() === 1);
+            })
+        })
+    });
 });
