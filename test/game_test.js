@@ -1,4 +1,5 @@
 import assert from 'power-assert';
+import Game from '../src/game';
 
 describe('Game', () => {
     describe('.score', () => {
