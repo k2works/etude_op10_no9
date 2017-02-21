@@ -133,7 +133,7 @@ describe('Game', () => {
                 for(let i=0; i<12; i++) {
                     g.add(10);
                 }
-                assert(g.getCurrentFrame() === 10);
+                assert(g.getCurrentFrame() === 11);
             })
         });
     });
