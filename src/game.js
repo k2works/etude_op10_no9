@@ -54,6 +54,7 @@ class Game {
             this.itsCurrentFrame++;
             this.firstThrow = true;
         }
+        this.itsCurrentFrame = Math.min(10, this.itsCurrentFrame);
     }
 }
 export default Game;
