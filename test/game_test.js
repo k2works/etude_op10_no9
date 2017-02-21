@@ -22,7 +22,19 @@ describe('Game', () => {
             })
         });
         context('when spare', function () {
-            it('is scored')
+            it('is scored', () => {
+                g.add(3);
+                g.add(7);
+                g.add(3);
+                assert(g.score() === 13);
+            });
+            it('is scored', () => {
+                g.add(3);
+                g.add(7);
+                g.add(3);
+                g.add(2);
+                assert(g.score() === 18);
+            })
         })
     });
     describe('.scoreForFrame', () => {
