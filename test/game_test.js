@@ -74,6 +74,21 @@ describe('Game', () => {
                 g.add(2);
                 assert(g.getCurrentFrame() === 3);
             })
+        });
+        context('when spare', function () {
+            it('current frame is', () => {
+                g.add(3);
+                g.add(7);
+                g.add(3);
+                assert(g.getCurrentFrame() === 2);
+            });
+            it('current frame is', () => {
+                g.add(3);
+                g.add(7);
+                g.add(3);
+                g.add(2);
+                assert(g.getCurrentFrame() === 3);
+            })
         })
     });
 });
