@@ -14,7 +14,7 @@ class Game {
     add(pins) {
         this.itsThrows[this.itsCurrentThrow++]=pins;
         this.itsScore += pins;
-        this._adjustCurrentFrame();
+        this._adjustCurrentFrame(pins);
     }
 
     scoreForFrame(theFrame) {
@@ -24,13 +24,17 @@ class Game {
              currentFrame < theFrame;
              currentFrame++) {
             let firstThrow = this.itsThrows[ball++];
-            let secondThrow = this.itsThrows[ball++];
-            let frameScore = firstThrow + secondThrow;
-            // スペアの得点計算には次のフレームの第１投が必要
-            if (frameScore === 10) {
-                score += frameScore + this.itsThrows[ball];
+            if (firstThrow === 10) {
+                score += 10 + this.itsThrows[ball] + this.itsThrows[ball+1];
             } else {
-                score += frameScore;
+                let secondThrow = this.itsThrows[ball++];
+                let frameScore = firstThrow + secondThrow;
+                // スペアの得点計算には次のフレームの第１投が必要
+                if (frameScore === 10) {
+                    score += frameScore + this.itsThrows[ball];
+                } else {
+                    score += frameScore;
+                }
             }
         }
         return score;
@@ -40,9 +44,12 @@ class Game {
         return this.itsCurrentFrame;
     }
 
-    _adjustCurrentFrame() {
-        if (this.firstThrow === true) {
-            this.firstThrow = false;
+    _adjustCurrentFrame(pins) {
+        if (this.firstThrow == true ) {
+            if (pins === 10) // ストライク
+                this.itsCurrentFrame++;
+            else
+                this.firstThrow = false;
         } else {
             this.itsCurrentFrame++;
             this.firstThrow = true;
