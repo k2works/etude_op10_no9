@@ -55,8 +55,8 @@ class Game {
             this.ball+=2;
             score += 10 + this._nextBall();
         } else {
+            score += this._twoBallsInFrame();
             this.ball+=2;
-            score += frameScore;
         }
         return score
     }
@@ -67,6 +67,10 @@ class Game {
 
     _nextBall() {
         return this.itsThrows[this.ball];
+    }
+
+    _twoBallsInFrame() {
+        return this.itsThrows[this.ball] + this.itsThrows[this.ball+1];
     }
 
     _adjustCurrentFrame(pins) {
