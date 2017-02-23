@@ -23,7 +23,6 @@ class Game {
         for (let currentFrame=0;
              currentFrame < theFrame;
              currentFrame++) {
-            this.firstThrow = this.itsThrows[this.ball];
             if (this._strike()) {
                 this.ball++;
                 score += 10 + this._nextTwoBalls();
@@ -48,8 +47,6 @@ class Game {
 
     _handleSecondThrow() {
         let score = 0;
-        this.secondThrow = this.itsThrows[this.ball+1];
-        let frameScore = this.firstThrow + this.secondThrow;
         // スペアの得点計算には次のフレームの第１投が必要
         if (this._spare()) {
             this.ball+=2;
