@@ -82,6 +82,14 @@ describe('Game', () => {
                 assert(g.score() === 133);
             })
         });
+        context('when heart break game', function () {
+            it('is scored', () => {
+                for(let i=0; i<11; i++)
+                    g.add(10);
+                g.add(9);
+                assert(g.score() === 299);
+            })
+        });
     });
     describe('.scoreForFrame', () => {
         context('when four throws', function () {
