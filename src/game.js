@@ -27,14 +27,7 @@ class Game {
             if (this.firstThrow === 10) {
                 score += 10 + this.itsThrows[this.ball] + this.itsThrows[this.ball+1];
             } else {
-                this.secondThrow = this.itsThrows[this.ball++];
-                let frameScore = this.firstThrow + this.secondThrow;
-                // スペアの得点計算には次のフレームの第１投が必要
-                if (frameScore === 10) {
-                    score += frameScore + this.itsThrows[this.ball];
-                } else {
-                    score += frameScore;
-                }
+                score += this._handleSecondThrow();
             }
         }
         return score;
@@ -42,6 +35,19 @@ class Game {
 
     getCurrentFrame() {
         return this.itsCurrentFrame;
+    }
+
+    _handleSecondThrow() {
+        let score = 0;
+        this.secondThrow = this.itsThrows[this.ball++];
+        let frameScore = this.firstThrow + this.secondThrow;
+        // スペアの得点計算には次のフレームの第１投が必要
+        if (frameScore === 10) {
+            score += frameScore + this.itsThrows[this.ball];
+        } else {
+            score += frameScore;
+        }
+        return score
     }
 
     _adjustCurrentFrame(pins) {
