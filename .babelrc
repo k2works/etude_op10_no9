@@ -6,6 +6,7 @@
   "retainLines": true,
   "plugins": [
     "babel-plugin-espower",
-    "transform-flow-strip-types"
+    "transform-flow-strip-types",
+    "add-module-exports"
   ]
 }
