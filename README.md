@@ -1,50 +1,34 @@
-Étude Op. 10, No. 9 
-===================
 
 [![CircleCI](https://circleci.com/gh/k2works/etude_op10_no9.svg?style=svg)](https://circleci.com/gh/k2works/etude_op10_no9)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/k2works/etude_op10_no6/master/LICENSE.txt)
 [![npm version](https://badge.fury.io/js/etude-op10-no9.svg)](https://badge.fury.io/js/etude-op10-no9)
 
-# 目的 #
-ボウリングゲームnode.js実装
 
-# 前提 #
-| ソフトウェア   | バージョン   | 備考        |
-|:---------------|:-------------|:------------|
-| node           |7.3.0    |             |
-| npm            |3.10.10  |             |
-| yarn           |0.18.1   |             |
-| vagrant        |1.8.7    |             |
-| docker         |1.12.5    |             |
-| docker-compose |1.8.0    |             |
+### etude-op10-no9
 
-# 構成 #
-1. [構築](#構築)
-1. [配置](#配置)
-1. [開発](#開発)
+[Getting start](./docs/README.md)
 
-## 構築
+
+## install
+
 ```bash
-vagrant up
-vagrant ssh
-cd /vagrant
-npm init -y
-npm install babel-core babel-preset-es2015 babel-plugin-transform-flow-strip-types --save-dev
-npm install mocha --save-dev
-npm install power-assert babel-plugin-espower --save-dev
+npm install etude-op10-no9
 ```
-**[⬆ back to top](#構成)**
 
-## 配置
-```bash
-npm adduser
-npm publish
+## usage
+
+```js
+import Game from '../src/game';
+
+g = new Game();
+
+g.add(5) //Set score 
+g.add(4)
+
+g.score  //Get total score
+g.score_for_frame(1)   //Get score by frame
 ```
-**[⬆ back to top](#構成)**
 
-## 開発
-**[⬆ back to top](#構成)**
+## license
 
-# 参照 #
-+ [アジャイルソフトウェア開発の奥義 第2版 オブジェクト指向開発の神髄と匠の技](https://www.amazon.co.jp/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E9%96%8B%E7%99%BA%E3%81%AE%E5%A5%A5%E7%BE%A9-%E7%AC%AC2%E7%89%88-%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E9%96%8B%E7%99%BA%E3%81%AE%E7%A5%9E%E9%AB%84%E3%81%A8%E5%8C%A0%E3%81%AE%E6%8A%80-%E3%83%AD%E3%83%90%E3%83%BC%E3%83%88%E3%83%BBC%E3%83%BB%E3%83%9E%E3%83%BC%E3%83%81%E3%83%B3/dp/4797347783)
-+ [3時間でできるnpmモジュール](http://qiita.com/cognitom/items/75736e27cc7de151a7d5#packagejson)
+MIT. Copyright (c) [k2works](http://feross.org).

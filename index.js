@@ -1,1 +1,1 @@
-import Throw from './src/throw';
+import Game from './src/game';
