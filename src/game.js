@@ -24,11 +24,11 @@ class Game {
              currentFrame < theFrame;
              currentFrame++) {
             if (this._strike()) {
+                score += 10 + this._nextTwoBallForSpare();
                 this.ball++;
-                score += 10 + this._nextTwoBalls();
             } else if (this._spare()) {
+                score += 10 + this._nextBallForSpare();
                 this.ball+=2;
-                score += 10 + this._nextBall();
             } else {
                 score += this._twoBallsInFrame();
                 this.ball+=2;
@@ -45,16 +45,16 @@ class Game {
         return this.itsThrows[this.ball] === 10;
     }
 
-    _nextTwoBalls() {
-        return this.itsThrows[this.ball] + this.itsThrows[this.ball + 1];
+    _nextTwoBallForSpare() {
+        return this.itsThrows[this.ball+1] + this.itsThrows[this.ball+2];
     }
 
     _spare() {
         return (this.itsThrows[this.ball] + this.itsThrows[this.ball+1] === 10);
     }
 
-    _nextBall() {
-        return this.itsThrows[this.ball];
+    _nextBallForSpare() {
+        return this.itsThrows[this.ball+2];
     }
 
     _twoBallsInFrame() {
