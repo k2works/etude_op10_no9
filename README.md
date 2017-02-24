@@ -18,15 +18,19 @@ npm install etude-op10-no9
 ## usage
 
 ```js
-import Game from '../src/game';
+var BowlingGame = require('etude-op10-no9');
 
-g = new Game();
+var game = new BowlingGame;
 
-g.add(5) //Set score 
-g.add(4)
+game.start();
 
-g.score  //Get total score
-g.score_for_frame(1)   //Get score by frame
+game.add(5); //Set score 
+game.add(4);
+
+game.score();  //Get total score
+game.scoreForFrame(1);   //Get score by frame
+
+game.end();
 ```
 
 ## license

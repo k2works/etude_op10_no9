@@ -1,8 +1,11 @@
 {
   "name": "etude-op10-no9",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Bowling game Node impliments.",
   "main": "index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "mocha",
     "build": "gulp"

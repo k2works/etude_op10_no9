@@ -35,6 +35,7 @@ npm install gulp-babel babel-plugin-transform-runtime babel-plugin-add-module-ex
 ## 配置
 ```bash
 npm adduser
+npm run build
 npm publish
 ```
 **[⬆ back to top](#構成)**
