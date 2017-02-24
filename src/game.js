@@ -27,13 +27,17 @@ class Game {
     _adjustCurrentFrame(pins) {
         if (this.itsFirstThrow == true ) {
             if (pins === 10) // ストライク
-                this.itsCurrentFrame++;
+                this._advanceFrame();
             else
                 this.itsFirstThrow = false;
         } else {
-            this.itsCurrentFrame++;
             this.itsFirstThrow = true;
+            this._advanceFrame();
         }
+    }
+
+    _advanceFrame() {
+        this.itsCurrentFrame++;
         this.itsCurrentFrame = Math.min(11, this.itsCurrentFrame);
     }
 }
