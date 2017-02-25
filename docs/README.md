@@ -34,6 +34,7 @@ npm install gulp gulp-babel babel-plugin-transform-runtime babel-plugin-add-modu
 
 ## 配置
 ```bash
+npm install --save-dev publish
 npm adduser
 npm run build
 npm publish
