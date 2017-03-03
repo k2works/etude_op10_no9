@@ -37,11 +37,13 @@ game.end();
 
 ```bash
 git clone https://github.com/k2works/etude_op10_no9.git etude-op10-no9
-cd /etude-op10-no9
+cd ./etude-op10-no9
 vagrant up
 vagrant ssh
 yarn install
 npm run build
+node
+>var BowlingGame = require('./index.js');
 ```
 
 ## license
