@@ -33,6 +33,17 @@ game.scoreForFrame(1);   //Get score by frame
 game.end();
 ```
 
+## Devlopment
+
+```bash
+git clone https://github.com/k2works/etude_op10_no9.git etude-op10-no9
+cd /etude-op10-no9
+vagrant up
+vagrant ssh
+yarn install
+npm run build
+```
+
 ## license
 
 MIT. Copyright (c) [k2works](http://feross.org).
