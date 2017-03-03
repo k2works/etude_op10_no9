@@ -1,7 +1,12 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
+const rimraf = require('rimraf');
 
-gulp.task('default', () => {
+gulp.task('clean', function (cb) {
+    rimraf('./lib', cb);
+});
+
+gulp.task('compile', () => {
     return gulp.src('src/*.js')
         .pipe(babel({
             plugins: ['add-module-exports']
@@ -16,4 +21,4 @@ gulp.task('test', function() {
     .pipe(mocha({ reporter: 'spec'}))
 });
 
-gulp.task('default', ['test']);
+gulp.task('default', ['clean','test','compile']);
